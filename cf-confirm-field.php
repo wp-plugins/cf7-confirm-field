@@ -29,6 +29,9 @@ function wpcf7_confirm_messages( $messages ) {
     )));
 }
 if ( defined( 'WPCF7_PLUGIN' ) ) {
-	add_filter( 'wpcf7_validate_email', 'wpcf7_text_confirm_field', 10, 2 );
+	add_filter( 'wpcf7_validate_email*', 'wpcf7_text_confirm_field', 10, 2 );
+    add_filter( 'wpcf7_validate_email', 'wpcf7_text_confirm_field', 10, 2 );
+    add_filter( 'wpcf7_validate_text', 'wpcf7_text_confirm_field', 10, 2 );
+    add_filter( 'wpcf7_validate_text', 'wpcf7_text_confirm_field', 10, 2 );
 	add_filter('wpcf7_messages','wpcf7_confirm_messages');
 }
